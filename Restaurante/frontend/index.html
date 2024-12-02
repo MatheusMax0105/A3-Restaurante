@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Gerenciamento de Restaurante</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Restaurante XYZ</h1>
+    <nav>
+      <ul>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#reservas">Reservas</a></li>
+        <li><a href="#pedidos">Pedidos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Produtos Section -->
+    <section id="produtos">
+      <h2>Produtos</h2>
+      <div id="productList"></div>
+      <button onclick="showAddProductForm()">Adicionar Produto</button>
+      <!-- Formulário para adicionar produtos -->
+      <div id="addProductForm" style="display: none;">
+        <input type="text" id="productName" placeholder="Nome do Produto">
+        <input type="text" id="productDescription" placeholder="Descrição">
+        <input type="number" id="productPrice" placeholder="Preço">
+        <input type="text" id="productCategory" placeholder="Categoria">
+        <input type="number" id="productQuantity" placeholder="Quantidade">
+        <button onclick="addProduct()">Adicionar</button>
+        <button onclick="hideAddProductForm()">Cancelar</button>
+      </div>
+    </section>
+
+    <!-- Reservas Section -->
+    <section id="reservas">
+      <h2>Reservas</h2>
+      <div id="reservationList"></div>
+      <button onclick="showAddReservationForm()">Adicionar Reserva</button>
+      <!-- Formulário para adicionar reservas -->
+      <div id="addReservationForm" style="display: none;">
+        <input type="text" id="reservationClientName" placeholder="Nome do Cliente">
+        <input type="text" id="reservationPhone" placeholder="Telefone">
+        <input type="number" id="reservationTableId" placeholder="ID da Mesa">
+        <input type="datetime-local" id="reservationDate" placeholder="Data da Reserva">
+        <button onclick="addReservation()">Adicionar</button>
+        <button onclick="hideAddReservationForm()">Cancelar</button>
+      </div>
+    </section>
+
+    <!-- Pedidos Section -->
+    <section id="pedidos">
+      <h2>Pedidos</h2>
+      <div id="orderList"></div>
+      <button onclick="showAddOrderForm()">Adicionar Pedido</button>
+      <!-- Formulário para adicionar pedidos -->
+      <div id="addOrderForm" style="display: none;">
+        <input type="number" id="orderTableId" placeholder="ID da Mesa">
+        <input type="text" id="orderProducts" placeholder="IDs dos Produtos (ex: 1,2,3)">
+        <button onclick="addOrder()">Adicionar</button>
+        <button onclick="hideAddOrderForm()">Cancelar</button>
+      </div>
+    </section>
+
+    
+  </main>
+</body>
+</html>
+
